@@ -94,6 +94,9 @@
                         <label for="question">Question:</label>
                         <input type="text" name="question" required>
                     </div>
+                    {% if question %}
+                        <p>{{ question }}</p>
+                    {% endif %}
                     <button type="submit"><i class="fas fa-paper-plane"></i> Submit</button>
                 </div>
                 <div class="output-column">

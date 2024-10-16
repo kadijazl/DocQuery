@@ -15,14 +15,14 @@ nlp = pipeline("document-question-answering", model="impira/layoutlm-document-qa
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    input_image_url = Nonegit switch -c main
 
     output_image_url = None
-    answer_text = None  # Variable to hold the answer
+    answer_text = None
+    question = None 
 
     if request.method == "POST":
         file = request.files['file']
-        question = request.form['question']
+        question = request.form['question']  # Store the question
 
         # Process the uploaded image
         image = Image.open(file.stream)
@@ -61,11 +61,9 @@ def index():
             highlighted_image.save(highlighted_img_byte_arr, format='PNG')
             highlighted_img_byte_arr.seek(0)
 
-            # Prepare the URLs for images
-            input_image_url = "data:image/png;base64," + base64.b64encode(input_img_byte_arr.getvalue()).decode()
             output_image_url = "data:image/png;base64," + base64.b64encode(highlighted_img_byte_arr.getvalue()).decode()
 
-    return render_template("/index.html", output_image_url=output_image_url, answer_text=answer_text)
+    return render_template("/index.html", output_image_url=output_image_url, answer_text=answer_text, question=question)
 
 if __name__ == "__main__":
     app.run(debug=True)
