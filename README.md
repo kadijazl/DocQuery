@@ -1,5 +1,5 @@
 # 🧾 DocQuery: Receipt Q&A System
-DocQuery is a document-based question answering tool tailored for receipts. Simply upload an image file (.jpg, .jpeg, .png) and ask a question — the system returns:
+DocQuery is a document-based question answering tool tailored for receipts. Simply upload an image file (.jpg, .jpeg, .png) and ask a question. The system returns:
 - A direct answer extracted from the receipt
 - The original image with the answer area highlighted
 
