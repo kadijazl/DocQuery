@@ -1,7 +1,11 @@
-# DocQuery
+# 🧾 DocQuery: Receipt Q&A System
+DocQuery is a document-based question answering tool tailored for receipts. Simply upload an image file (.jpg, .jpeg, .png) and ask a question — the system returns:
+- A direct answer extracted from the receipt
+- The original image with the answer area highlighted
 
-Prompt query from any documents (I focus on receipts for my use case). Just upload your file (.jpg, .jpeg, .png) and ask a question. This will yield two results - answer text and image with highlighted answer.
+## 💡 How It Works
+- Utilizes LayoutLM, a layout-aware transformer model that excels at understanding structured documents like receipts.
+- Initially experimented with Donut, but switched due to its limitations in handling layout-sensitive document.
 
-Using LayoutLM model. Initially used Donut, but it doesn't work well with receipts since it does not take into consideration the document layout when processing the image.
-
-This use case explores the OCR and LLM implementation as part of my internship task.
+## 
+ℹ️ This use case explores the OCR and LLM implementation as part of my internship task.
